@@ -8,15 +8,15 @@ public class Error {
     public Error() {
     }
 
-    public static void main(String[] args) {
-        Error error = new Error(true, 66, "Error");
-        error.printInfo();
-    }
-
     public Error(boolean active, int status, String message) {
         this.active = active;
         this.status = status;
         this.message = message;
+    }
+
+    public static void main(String[] args) {
+        Error error = new Error(true, 66, "Error");
+        error.printInfo();
     }
 
     public void printInfo() {
