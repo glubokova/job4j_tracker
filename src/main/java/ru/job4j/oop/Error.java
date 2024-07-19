@@ -15,7 +15,7 @@ public class Error {
     }
 
     public static void main(String[] args) {
-        Error error = new Error(true, 66, "Error");
+        Error error = new Error(true, 67, "Error");
         error.printInfo();
     }
 
