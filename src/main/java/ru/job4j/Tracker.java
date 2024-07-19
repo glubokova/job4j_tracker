@@ -6,18 +6,6 @@ public class Tracker {
     private int size = 0;
     private String name;
 
-    public Tracker() {
-    }
-
-    public Tracker(String name) {
-        this.name = name;
-    }
-
-    public Tracker(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
     public Item add(Item item) {
         item.setId(id++);
         items[size++] = item;
