@@ -25,6 +25,6 @@ public class TriangleTest {
         Triangle triangle = new Triangle(a, b, c);
         double result = triangle.area();
         double expected = -1;
-        assertThat(result).isEqualTo(expected);
+        assertThat(result).isEqualTo(-1);
     }
 }
