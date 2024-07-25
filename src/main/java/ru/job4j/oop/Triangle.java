@@ -1,9 +1,9 @@
 package ru.job4j.oop;
 
 public class Triangle {
-    private final Point first;
-    private final Point second;
-    private final Point third;
+    private Point first;
+    private Point second;
+    private Point third;
 
     public Triangle(Point ap, Point bp, Point cp) {
         this.first = ap;
