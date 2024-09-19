@@ -27,7 +27,7 @@ public class Student {
         return fullName;
     }
 
-    public void setFullName(String FIO) {
+    public void setFullName(String fullName) {
         this.fullName = fullName;
     }
 }
