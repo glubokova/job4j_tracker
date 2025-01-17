@@ -21,7 +21,7 @@ public class Dendy {
             } else if (select == 2) {
                 System.out.println("Супер Марио загружается... ");
             } else {
-                System.out.println("Такой игры нет.") ;
+                System.out.println("Такой игры нет.");
             }
             System.out.println();
         }
