@@ -17,7 +17,7 @@ public class Dendy {
                 System.out.println("Игра завершена.");
                 run = false;
             } else if (select == 1) {
-                System.out.println("Танчики загружаются....");
+                System.out.println("Танчики загружаются.... ");
             } else if (select == 2) {
                 System.out.println("Супер Марио загружается... ");
             } else {
