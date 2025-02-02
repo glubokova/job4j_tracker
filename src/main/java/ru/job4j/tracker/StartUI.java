@@ -1,14 +1,57 @@
 package ru.job4j.tracker;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 public class StartUI {
+
+    public void init(Scanner scanner, Tracker tracker) {
+        boolean run = true;
+        while (run) {
+            showMenu();
+            System.out.print("Выбрать: ");
+            int select = Integer.parseInt(scanner.nextLine());
+            if (select == 0) {
+                System.out.println("=== Создание новой заявки ===");
+                System.out.print("Введите имя: ");
+                String name = scanner.nextLine();
+                Item item = new Item(name);
+                tracker.add(item); // Добавляем заявку в трекер
+                System.out.println("Добавленная заявка: " + item);
+            } else if (select == 6) {
+                run = false;
+            } else if (select == 1) {
+                System.out.println("===Вывод всех заявок===");
+                Item[] items = tracker.findAll();
+                for (Item item : items) {
+                    System.out.println(item);
+                }
+            }
+            Item[] items = tracker.findAll();
+            if (items.length > 0) {
+                for (Item item : items) {
+                    System.out.println(item);
+                }
+            } else {
+                System.out.println("Хранилище еще не содержит заявок");
+            }
+        }
+    }
+
+    private void showMenu() {
+        String[] menu = {
+                "Добавить новую заявку", "Показать все заявки", "Изменить заявку",
+                "Удалить заявку", "Показать заявку по id", "Показать заявки по имени",
+                "Завершить программу"
+        };
+        System.out.println("Меню:");
+        for (int i = 0; i < menu.length; i++) {
+            System.out.println(i + ". " + menu[i]);
+        }
+    }
+
     public static void main(String[] args) {
-        Item item = new Item();
-        LocalDateTime createdDate = item.getCreated();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
-        String formattedDate = createdDate.format(formatter);
-        System.out.println("Текущие дата и время после форматирования: " + formattedDate);
+        Scanner scanner = new Scanner(System.in);
+        Tracker tracker = new Tracker();
+        new StartUI().init(scanner, tracker);
     }
 }
