@@ -12,7 +12,7 @@ public class StartUI {
             int select = Integer.parseInt(scanner.nextLine());
             if (select == 0) {
                 System.out.println("=== Создание новой заявки ===");
-                System.out.print("Введите имя: ");
+                System.out.print("Введите имяя: ");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
                 tracker.add(item); // Добавляем заявку в трекер
