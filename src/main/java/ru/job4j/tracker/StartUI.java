@@ -28,6 +28,12 @@ public class StartUI {
                 }
             } else if (select == 6) {
                 run = false;
+            } else if (select == 1) {
+                System.out.println("===Вывод всех заявок===");
+                Item[] items = tracker.findAll();
+                for (Item item : items) {
+                    System.out.println(item);
+                }
             }
         }
     }
