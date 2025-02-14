@@ -28,11 +28,17 @@ public class StartUI {
                 }
             } else if (select == 6) {
                 run = false;
-            } else if (select == 1) {
-                System.out.println("===Вывод всех заявок===");
-                Item[] items = tracker.findAll();
-                for (Item item : items) {
-                    System.out.println(item);
+            } else if (select == 2) {
+                System.out.println("=== Редактирование заявки ===");
+                System.out.print("Введите id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                System.out.print("Введите имя: ");
+                String name = scanner.nextLine();
+                Item item = new Item(name);
+                if (tracker.replace(id, item)) {
+                    System.out.println("Заявка изменена успешно.");
+                } else {
+                    System.out.println("Ошибка замены заявки.");
                 }
             }
         }
