@@ -8,7 +8,7 @@ public class DeleteAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println("=== Удаление заявки ===");
+        System.out.println("===Удаление заявки===");
         int id = input.askInt("Введите id: ");
         Item item = tracker.findById(id);
         tracker.delete(id);
